@@ -25,7 +25,7 @@ public class ex2 {
 	}
 
 	public static void main(String[] args) {
-		String str = "   t3h1u2    h3a3n  T1r3in1h1 ";
+		String str = "    c3a5o  s6y   m8i0n0h    H07o2a1ng111   ";
 		str = fomartString(str);
 		System.out.println(str);
 
