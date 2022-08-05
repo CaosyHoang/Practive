@@ -9,7 +9,6 @@ public class Employee {
 	private String name;
 	private int age;
 	private int workingDays;
-	private double salary = workingDays * PRICE;
 
 	public Employee() {
 		id = "Null";
