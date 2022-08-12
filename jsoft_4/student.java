@@ -8,10 +8,25 @@ public class student {
 	private String name;
 	private int age;
 	private address diaChi = new address();
+	private static int value = 0;
 
-	public void input() {
+	public void input(String a[]) {
+		boolean abs = false;
 		System.out.print("Nhap ma so: ");
-		maSo = scanner.nextLine();
+		do {
+			maSo = scanner.nextLine();
+			for (int i = 0; i < value; i++) {
+				if (maSo.compareToIgnoreCase(a[i]) == 0) {
+					abs = true;
+					break;
+				} else
+					abs = false;
+			}
+			if (abs)
+				System.out.print("Nhap lai ma so: ");
+		} while (abs);
+		a[value] = maSo;
+		value++;
 		System.out.print("Nhap ten: ");
 		name = scanner.nextLine();
 		System.out.print("Nhap tuoi: ");
@@ -60,12 +75,13 @@ public class student {
 	public static void main(String[] args) {
 		System.out.print("Nhap n = ");
 		int n = scanner.nextInt();
+		String a[] = new String[n];
 		scanner.nextLine();
 		student sinhVien[] = new student[n];
 		for (int i = 0; i < n; i++) {
 			System.out.println("Nhap sinh vien " + (i + 1));
 			sinhVien[i] = new student();
-			sinhVien[i].input();
+			sinhVien[i].input(a);
 		}
 		System.out.println("-----------------------------");
 		for (int i = 0; i < n; i++) {
